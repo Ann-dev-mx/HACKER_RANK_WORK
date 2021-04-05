@@ -1,0 +1,61 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+ public static void main(String args[])
+ {
+     Scanner scan = new Scanner(System.in);
+     int s =scan.nextInt();
+     int t =scan.nextInt();
+     int a =scan.nextInt();
+     int b =scan.nextInt();
+     int m =scan.nextInt();
+     int n =scan.nextInt();
+     int ar[]=new int[m];
+     int br[]=new int[n];
+     for(int i =0;i<m;i++)
+     {
+         ar[i]=scan.nextInt();
+     }
+     for(int j=0;j<n;j++)
+     {
+         br[j]=scan.nextInt();
+     }
+    int ar1[]=new int[m];
+     int br1[]=new int[n];  
+    for(int k =0;k<m;k++)
+     {
+         ar1[k]=(ar[k]+a);
+     }
+     for(int l=0;l<n;l++)
+     {
+         br1[l]=(br[l]+b);
+     }
+int apple =0;
+     for(int p =0;p< m;p++ )
+     {
+         if(s <= ar1[p] && t >= ar1[p])
+         {
+       apple++;
+         }
+     }
+      System.out.println(apple);
+  int orange =0;
+     for(int q =0;q < n;q++ )
+     {
+         if(s <= br1[q] && t >= br1[q])
+         {
+orange++;
+         }
+     }
+     
+     System.out.println(orange);  
+ }
+   
+           
+}

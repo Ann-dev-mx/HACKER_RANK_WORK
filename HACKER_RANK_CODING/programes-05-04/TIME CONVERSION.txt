@@ -1,0 +1,49 @@
+import java.io.*;
+import java.math.*;
+import java.text.*;
+import java.util.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String args[])
+    {
+        Scanner scan = new Scanner(System.in);
+        String s=scan.nextLine();
+        String []ar=s.split(":");
+        String t="";
+        if (ar[2].contains("AM"))
+        {
+            if (ar[0].contains("12"))
+            {
+             
+        t=t+ar[2].replaceAll("[^0-9]","");
+       
+       System.out.println("00:"+ar[1]+":"+t);   
+            }
+            else
+            {
+          t=t+ar[2].replaceAll("[^0-9]","");  
+          System.out.println(ar[0]+":"+ar[1]+":"+t);
+            }
+          
+        }
+        if (ar[2].contains("PM"))
+        {
+            if (ar[0].contains("12"))
+            {
+                 t=t+ar[2].replaceAll("[^0-9]","");  
+          System.out.println(ar[0]+":"+ar[1]+":"+t);
+            }
+            else
+            {
+        int val1=Integer.parseInt(ar[0]);
+       t=t+ar[2].replaceAll("[^0-9]","");
+       int val2=val1+12;
+       System.out.println(val2+":"+ar[1]+":"+t);
+            }
+        }
+        
+
+    }
+}

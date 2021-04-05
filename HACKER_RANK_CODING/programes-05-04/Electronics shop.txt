@@ -1,0 +1,39 @@
+import java.io.*;
+import java.math.*;
+import java.text.*;
+import java.util.*;
+import java.util.regex.*;
+
+public class Solution {
+ public static void main(String[] args) {
+      Scanner scan = new Scanner(System.in);
+      int b =scan.nextInt();
+      int k =scan.nextInt();
+      int u=scan.nextInt();
+      int key[] = new int[k];
+      int usb[] =  new int[u];
+      for(int i=0;i<k;i++){
+          key[i]=scan.nextInt();
+      }
+      for(int i=0;i<u;i++){
+          usb[i]=scan.nextInt();
+      }
+      Arrays.sort(key);
+      Arrays.sort(usb);
+      int max = 0;
+      for(int i=0;i<k;i++){
+          for(int j=0;j<u;j++){
+              if(key[i]+usb[j] > max && key[i]+usb[j]<=b ){
+                  max = key[i]+usb[j];
+              }
+          }
+      }
+      
+      if(max == 0){
+         System.out.println(-1); 
+      }
+      else{
+          System.out.println(max);
+      }
+    }
+}
